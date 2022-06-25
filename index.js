@@ -23,4 +23,19 @@ $(function() {
     if (dados){
         popula_tabela()
     }
+
+    $("abtnSalvar").click(function(){
+        
+        let Nome = $("#txt_nome").val()
+        let Sobrenome = $("#txt_sobrenome").val()
+        let Nasc = $("#txt_nasc").val()
+        let CNPJ = $("#txt_cnpj").val()
+
+
+        let registro = {}
+
+                
+
+    })
+
 })
