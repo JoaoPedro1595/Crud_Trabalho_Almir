@@ -1,9 +1,5 @@
 var dados = []
 
-function add_nota(){
-
-}
-
 function apaga_registro(id) {
     let _confirm = confirm("Deseja realmente excluir o registro?")
 
@@ -41,6 +37,7 @@ function popula_tabela() {
     if (Array.isArray(dados)) {
 
         localStorage.setItem("__dados__", JSON.stringify(dados))
+        
 
         $("#tbl_dados tbody").html("")
 
@@ -53,7 +50,6 @@ function popula_tabela() {
                 <td>${item.CNPJ}</td>
                 <td><button type="button" class="btn btn-primary" onclick="javascript:edita_registro(${item.ID});"><i class="fa fa-edit"></button></td>
                 <td><button type="button" class="btn btn-danger" onclick="javascript:apaga_registro(${item.ID});"><i class="fa fa-trash"></button></td>
-                <td><button type="button" class="btn btn-success" onclick="javascript:add_nota(${item.ID});"><i class="fa fa-plus"></td>
             </tr>`)
         })
     }
@@ -62,9 +58,11 @@ function popula_tabela() {
 $(function () {
     dados = JSON.parse(localStorage.getItem("__dados__"))
 
-    if (dados) {
-        popula_tabela()
-    }
+    if (dados != null) {
+
+        popula_tabela();
+    
+      } else {dados = []}
 
     $("#btn_salvar").click(function () {
 
@@ -74,10 +72,8 @@ $(function () {
         let Nasc = new Date($("#txt_nasc").val()).toLocaleDateString("pt-br", { timeZone: "UTC" })
         let CNPJ = $("#txt_cnpj").val()
 
-
-        
-
         if (!_id || _id == "0"){
+
             let registro = {}
 
             registro.Nome = Nome
