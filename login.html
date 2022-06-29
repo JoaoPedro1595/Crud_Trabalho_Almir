@@ -1,0 +1,68 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            background-image: url("assets/background2.jpg");
+            background-position: center;
+            background-size: cover;
+        }
+
+        form {
+            width: 300px;
+            margin: 200px auto;
+            height: 200px;
+            text-align: center;
+            background-color: white;
+            font-family: sans-serif ;
+            padding: 10px;
+        }
+
+        input {
+            display: block;
+            margin: 10px auto;
+            width: 250px;
+            height: 30px;
+        }
+
+       
+
+    </style>
+
+</head>
+
+<body>
+        <form>
+            <h3>Login</h3>
+            <input type="text" placeholder="Login" id="login">
+            <input type="password" placeholder="Senha" id="senha">
+            <input type="submit" onclick="logar()"; return false>
+        </form>
+        <script>
+            function logar() {
+                var login = document.getElementById("login").value;
+                var senha = document.getElementById("senha").value;
+                if (login == "admin" && senha == "admin") {
+                    alert('Conectado ao banco de dados');
+                    location.href = "index.html";
+                    alert("123")
+                } else {
+                    alert('Usuario ou senha incorretos');   
+                }
+            }
+        </script>
+
+</body>
+
+</html>
