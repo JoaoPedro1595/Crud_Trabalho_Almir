@@ -68,8 +68,6 @@ $(function () {
 
         let _id = $("#hdid").val()
 
-        print(_id)
-
         let Tipo = $("#txt_tipo").val()
         let Doc = $("#txt_doc").val()
         let Lanc = new Date($("#txt_lanc").val()).toLocaleDateString("pt-br", { timeZone: "UTC" })
